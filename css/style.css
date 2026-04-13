@@ -1,15 +1,20 @@
 /* c:\Users\12300701\github_project\Geocache\css\style.css */
 
+/* Global box-sizing for easier layout management */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #e0e7e9; /* Lichtblauw-grijs */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Zorgt ervoor dat de body minimaal de volledige viewport hoogte inneemt */
     margin: 0;
     color: #333;
-    overflow: hidden; /* Voorkom scrollbalken als terminal groter is dan viewport */
+    /* overflow: hidden; verwijderd om scrollen toe te staan als de terminal overloopt */
 }
 
 #terminal {
@@ -21,7 +26,8 @@ body {
     max-width: 600px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    max-height: 95vh; /* Beperk de hoogte van de terminal om te voorkomen dat deze van het scherm valt */
+    overflow-y: auto; /* Sta scrollen binnen de terminal toe als de inhoud overloopt */
     transition: all 0.5s ease-in-out;
 }
 
@@ -59,6 +65,19 @@ input[type="number"] {
 input[type="text"]:focus,
 input[type="number"]:focus {
     border-color: #4a69bd;
+}
+
+/* Basis responsiviteit voor kleinere schermen */
+@media (max-width: 768px) {
+    #terminal {
+        padding: 20px; /* Verminder padding op kleinere schermen */
+        width: 95%; /* Gebruik meer breedte op kleinere schermen */
+        max-height: 98vh; /* Geef iets meer ruimte op mobiel */
+    }
+
+    #content-area {
+        padding: 15px; /* Verminder padding van het contentgebied */
+    }
 }
 
 #login-screen p {
