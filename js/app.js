@@ -3,7 +3,7 @@ const KLUIS_CODE = "Blackie1994";
 // Mini-game constants
 const NUM_ROUNDS = 4; // Aantal succesvolle hits nodig
 const INITIAL_SAFE_ZONE_SIZE = Math.PI * 0.5; // Initiële grootte van de safe zone (90 graden)
-const SAFE_ZONE_SHRINK_FACTOR = 0.7; // Factor waarmee de safe zone krimpt na elke succesvolle ronde
+const SAFE_ZONE_SHRINK_FACTOR = 0.85; // Factor waarmee de safe zone krimpt na elke succesvolle ronde
 const BAR_SPEED = 0.05; // radians per frame
 
 // Mini-game state
