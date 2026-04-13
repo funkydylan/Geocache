@@ -1,32 +1,179 @@
+/* c:\Users\12300701\github_project\Geocache\css\style.css */
+
 body {
-    background-color: #0a0a0a;
-    color: #00ff41;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0e7e9; /* Lichtblauw-grijs */
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    overflow: hidden; /* Voorkom scrollbalken als terminal groter is dan viewport */
 }
 
 #terminal {
+    background-color: #f0f4f7; /* Lichtere achtergrond voor de terminal */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
     width: 90%;
-    max-width: 500px;
-    border: 2px solid #00ff41;
-    padding: 20px;
-    background: #000;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
-.hidden { display: none; }
+h2 {
+    color: #4a69bd; /* Een aangenaam blauw */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
 
-input {
-    background: transparent; border: none; border-bottom: 1px solid #00ff41;
-    color: #00ff41; width: 100%; margin: 10px 0; font-size: 1.2em;
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.riddle {
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #c0d0d6;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4a69bd;
+}
+
+#login-screen p {
+    margin-bottom: 10px; /* Adjust spacing */
+}
+
+#game-instructions {
+    font-weight: bold;
+    color: #4a69bd;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 button {
-    background: #00ff41; color: #000; border: none;
-    padding: 10px; cursor: pointer; width: 100%; font-weight: bold;
+    background-color: #78a0d3; /* Een zacht blauw */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #5a8ac7; /* Donkerder blauw bij hover */
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Mini-game specifieke stijlen */
+#minigame-container {
+    margin: 30px auto;
+    border: 2px solid #b0d0e0;
+    border-radius: 50%;
+    width: 300px; /* Same as canvas width */
+    height: 300px; /* Same as canvas height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure nothing draws outside the circle */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Dashboard specifieke stijlen */
+#dashboard {
+    padding-top: 20px;
 }
 
 .folder {
-    margin: 15px 0; padding: 10px; border: 1px dashed #00ff41; cursor: pointer;
+    background-color: #dbe9f5; /* Zeer lichtblauw voor mappen */
+    border: 1px solid #b0d0e0;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #3a5a8a; /* Donkerder blauw voor maptekst */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.folder:hover {
+    background-color: #cce0f0; /* Iets donkerder bij hover */
+    transform: translateX(5px);
+}
+
+.folder::before {
+    content: '📁'; /* Map icoon */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Specifiek icoon voor de kluis */
+.kluis-folder::before {
+    content: '🔒'; /* Slot icoon */
+}
+
+/* Content Viewer specifieke stijlen */
+#content-viewer {
+    padding-top: 20px;
+}
+
+#content-area {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    min-height: 150px;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Kluis Scherm specifieke stijlen */
+#kluis-screen {
+    padding-top: 20px;
+}
+
+#kluis-screen h1 {
+    color: #e74c3c; /* Rood voor belangrijke coördinaten */
+    font-size: 2.5em;
+    margin-top: 20px;
+    line-height: 1.3;
+}
+
+#kluis-screen p {
+    font-size: 1.2em;
+    color: #555;
 }

@@ -11,28 +11,31 @@
 <div id="terminal">
     <div id="login-screen">
         <h2>SYSTEM LOGIN</h2>
-        <p>IDENTITEIT VEREIST...</p>
-        <input type="text" id="pass1" placeholder="Wachtwoord..." autocomplete="off">
-        <button onclick="checkLogin()">ENTER</button>
+        <p id="game-instructions">Druk op de knop wanneer de balk in de groene zone is. (4 keer)</p>
+        <div id="minigame-container">
+            <canvas id="minigameCanvas" width="300" height="300"></canvas>
+        </div>
+        <button id="loginButton">DUW</button>
     </div>
 
     <div id="dashboard" class="hidden">
         <h2>DIRECTORY: /ROOT</h2>
-        <div class="folder" onclick="loadContent('content/missie_logs.html')">📁 /MISSIE_LOGS</div>
-        <div class="folder" onclick="loadContent('content/persoonlijk.html')">📁 /PERSOONLIJK</div>
-        <div class="folder" onclick="openKluis()">🔒 /GEHEIME_KLUIS</div>
+        <div class="folder" onclick="loadContent('content/fotos_blackie_menu.html')">/FOTOS_BLACKIE</div>
+        <div class="folder" onclick="loadContent('content/persoonlijk.html')">/PERSOONLIJK</div>
+        <div class="folder kluis-folder" onclick="openKluis()">/GEHEIME_KLUIS</div>
     </div>
 
     <div id="content-viewer" class="hidden">
         <div id="content-area"></div>
-        <button onclick="showDashboard()">TERUG NAAR ROOT</button>
+        <button id="backToRootButton">TERUG NAAR ROOT</button>
     </div>
 
     <div id="kluis-screen" class="hidden">
         <h2>GEAUTOMATISEERDE KLUIS</h2>
-        <p>VOER DE 4-CIJFERIGE CODE IN.</p>
-        <input type="number" id="pass2" placeholder="Code...">
-        <button onclick="checkKluis()">DECRYPTEER</button>
+        <p>Voer de 4-cijferige code in.</p>
+        <input type="text" id="pass2" placeholder="Code...">
+        <button id="kluisButton">DECRYPTEER</button>
+        <button onclick="showDashboard()" style="margin-top: 10px;">TERUG NAAR ROOT</button>
     </div>
 </div>
 
